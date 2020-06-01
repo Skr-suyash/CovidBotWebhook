@@ -44,6 +44,8 @@ def world(request):
         else:
             
             country = req.get('queryResult').get('parameters').get('geo-country')
+            if (country == 'United States'):
+                country = 'US'
 
             apiCall = requests.get("https://covid19.mathdro.id/api/countries/"+ country).json()
 
