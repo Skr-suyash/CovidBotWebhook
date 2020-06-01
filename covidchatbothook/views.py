@@ -31,13 +31,13 @@ def world(request):
                 'recovered': apiCall['recovered']['value']
             }
 
-            message = "Total number of people in the world affected with COVID19 is {}. There have been {} deaths and {} people recovered.".format(data['confirmed'], data['deaths'], data['recovered'])
+            message = "Total number of people in the world affected with COVID19 is {}. There have been {} deaths and {} people recovered.".format(format(data['confirmed'], ',d'), format(data['deaths'], ',d'), format(data['recovered'], ',d'))
 
             response = ""
 
             responseObj = {
-                "fulfillmentText":  response,
-                "fulfillmentMessages": [{"text": {"text": [message]}}],
+                "fulfillmentText":  message,
+                # "fulfillmentMessages": [{"text": {"text": [message]}}],
                 "source": ""
             }
 
@@ -53,12 +53,12 @@ def world(request):
                 'recovered': apiCall['recovered']['value']
             }
 
-            message = "Total number of people in {} affected with COVID19 is {}. There have been {} deaths and {} people recovered.".format(country, data['confirmed'], data['deaths'], data['recovered'])
+            message = "Total number of people in {} affected with COVID19 is {}. There have been {} deaths and {} people recovered.".format(country, format(data['confirmed'], ',d'), format(data['deaths'], ',d'), format(data['recovered'], ',d'))
             response = ""
 
             responseObj = {
-                "fulfillmentText":  response,
-                "fulfillmentMessages": [{"text": {"text": [message]}}],
+                "fulfillmentText":  message,
+                # "fulfillmentMessages": [{"text": {"text": [message]}}],
                 "source": ""
             }
 
