@@ -14,6 +14,8 @@ def world(request):
 
         print('Received a post request')
 
+        print(request)
+
         apiCall = requests.get('https://covid19.mathdro.id/api').json()
 
         data = {
